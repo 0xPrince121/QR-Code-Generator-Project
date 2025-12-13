@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="icon">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+
+                    <rect width="40" height="40" rx="10" fill="#00ADB5"/>
+                    <rect x="10" y="10" width="6" height="6" fill="white"/>
+                    <rect x="10" y="18" width="6" height="6" fill="white"/>
+                    <rect x="18" y="10" width="6" height="6" fill="white"/>
+                    <rect x="24" y="10" width="6" height="6" fill="white"/>
+                    <rect x="24" y="18" width="6" height="6" fill="white"/>
+                    <rect x="18" y="24" width="6" height="6" fill="white"/>
+                    <rect x="10" y="24" width="6" height="6" fill="white"/>
+                    <rect x="24" y="24" width="6" height="6" fill="white"/>
+                </svg>
+            </div>
+            <h1>QR Code Generator</h1>
+            <p class="subtitle">Create high-quality QR codes with zero setup.</p>
+        </div>
+
+
+
+        <!-- How to Guide -->
+        <section class="section how-to-guide" aria-label="How to create QR Code">
+            <h2>How to create QR Code in 3 simple steps</h2>
+            
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Choose the QR Code type</h3>
+                        <p>Pick a QR format based on your purpose — URLs, Location-Share, Email, WhatsApp no ,and more.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Add details and customize</h3>
+                        <p>Just enter your details — we’ll format everything automatically. See a live preview before downloading.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Download & share</h3>
+                        <p>Just generate and download — your QR code is ready to share instantly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Left Section - QR Type -->
+            <section class="section qr-types" aria-label="QR Code Types">
+                <h2>QR Type</h2>
+                <p class="section-desc">Choose what to encode</p>
+                
+                <div class="options">
+                    <button class="option-btn active" data-type="website">
+                        <div class="option-icon">🌐</div>
+                        <div class="option-text">
+                            <span class="option-title">Website</span>
+                            <span class="option-desc">Any URL</span>
+                        </div>
+                    </button>
+
+                    <button class="option-btn" data-type="whatsapp">
+                        <div class="option-icon">📱</div>
+                        <div class="option-text">
+                            <span class="option-title">WhatsApp</span>
+                            <span class="option-desc">Phone numbers</span>
+                        </div>
+                    </button>
+
+                    <button class="option-btn" data-type="email">
+                        <div class="option-icon">✉️</div>
+                        <div class="option-text">
+                            <span class="option-title">Email</span>
+                            <span class="option-desc">Email addresses</span>
+                        </div>
+                    </button>
+
+
+                    <button class="option-btn" data-type="location">
+                        <div class="option-icon">📍</div>
+                        <div class="option-text">
+                            <span class="option-title">Location</span>
+                            <span class="option-desc">Auto-detect current location</span>
+                        </div>
+
+                    </button>
+                </div>
+            </section>
+
+            <!-- Right Section - Input -->
+            <section class="section input-section" aria-label="QR Code Input">
+                <h2>Enter Your Data</h2>
+
+                <p class="section-desc" id="inputDesc">Enter a website URL to generate QR code</p>
+                
+                <div class="location-status" id="locationStatus" style="display: none;">
+                    <div class="status-icon">📍</div>
+                    <div class="status-text">
+                        <span class="status-title">Location Ready</span>
+                        <span class="status-desc">We'll use your current GPS coordinates</span>
+                    </div>
+                </div>
+                
+
+                <div class="input-wrapper">
+                    <label for="dataInput" class="sr-only">Enter data for QR code generation</label>
+                    <input 
+                        type="text" 
+                        id="dataInput" 
+                        placeholder="Enter website URL&#10;(https://example.com)"
+                        class="data-input"
+                        aria-describedby="inputDesc"
+                        autocomplete="off"
+                        spellcheck="false"
+                    >
+                    <div class="input-info">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                        </svg>
+                        <span>We'll format your URL for the QR code</span>
+                    </div>
+                </div>
+
+                <button class="generate-btn" id="generateBtn">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/>
+                    </svg>
+                    Generate QR Code
+                </button>
+
+                <!-- QR Code Display -->
+                <div class="qr-result" id="qrResult">
+                    <div id="qrcode"></div>
+                    <button class="download-btn" id="downloadBtn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 12a1 1 0 01-.707-.293l-4-4a1 1 0 011.414-1.414L9 8.586V3a1 1 0 112 0v5.586l2.293-2.293a1 1 0 111.414 1.414l-4 4A1 1 0 0110 12z"/>
+                            <path d="M3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"/>
+                        </svg>
+                        Download QR Code
+                    </button>
+
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="footer-fancy" role="contentinfo">
+        <div class="wrap">
+            <div class="left">
+                <div class="made">
+                </div>
+
+                <div class="copy">© 2025 0xPrince .|  All rights reserved.</div>
+            </div>
+
+
+            <div class="right" aria-hidden="false">
+                <!-- small SVG icons (replace href with your profiles) -->
+                <a href="https://github.com/0xPrince121" class="icon" aria-label="GitHub" title="GitHub" rel="noopener">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.96 5.27.96 11.54c0 4.69 3.04 8.66 7.26 10.06.53.1.72-.23.72-.51 0-.25-.01-.92-.01-1.8-2.95.64-3.57-1.42-3.57-1.42-.48-1.22-1.17-1.55-1.17-1.55-.96-.66.07-.65.07-.65 1.06.08 1.62 1.09 1.62 1.09.94 1.6 2.47 1.14 3.07.87.1-.68.37-1.14.67-1.4-2.36-.27-4.84-1.18-4.84-5.25 0-1.16.41-2.11 1.08-2.86-.11-.27-.47-1.36.1-2.83 0 0 .88-.28 2.9 1.08a10.1 10.1 0 0 1 2.64-.36c.9 0 1.8.12 2.64.36 2.02-1.36 2.9-1.08 2.9-1.08.57 1.47.21 2.56.1 2.83.67.75 1.08 1.7 1.08 2.86 0 4.08-2.49 4.98-4.86 5.24.38.33.72.98.72 1.98 0 1.43-.01 2.59-.01 2.95 0 .28.19.61.73.51 4.22-1.41 7.26-5.38 7.26-10.06C23.04 5.27 18.27.5 12 .5z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="/static/script.js"></script>
+    <script>
+        document.getElementById('year2').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
