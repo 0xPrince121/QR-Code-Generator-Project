@@ -14,12 +14,8 @@ A modern web-based platform for dynamic QR code generation, management, and secu
 
 <p>
   <a href="#-features">Features</a> •
-  <a href="#-quick-start">Quick Start</a> •
-  <a href="https://github.com/0xPrince121/esg_score_predictor
-/issues">Report Bug</a> •
-  <a href="https://github.com/0xPrince121/esg_score_predictor
-/issues">Request Feature</a>
-</p>
+  <a href="#-quick-start">Quick Start</a> 
+  
 </div>
 
 ---
